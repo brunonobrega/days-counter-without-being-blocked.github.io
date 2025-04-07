@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #days {
+            font-size: 2em;
+            color: green;
+        }
+        #counter-container {
+            margin: 0 auto;
+        }
+        .counter-text {
+            font-weight: bold;
+        }
+    </style>
+    
+    <script>
+        function daysCounter() {
+            const oneDay = 24 * 60 * 60 * 1000; // milliseconds in one day
+            const firstTalk = new Date("2025-02-02 ");
+            const now = Date.now();
+
+            const days = Math.trunc((now - firstTalk) / oneDay);
+
+            return days;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="counter-container">
+        <h1 style="color:red;">ATENÇÃO!</h1>
+        
+        <p class="counter-text">ESTAMOS TRABALHANDO HÁ</p>
+        <h3 id="days"></h3>
+        <p class="counter-text">DIAS SEM BLOQUEIOS</p>
+    </div>
+
+    <script>
+        days = daysCounter();
+        document.getElementById("days").innerHTML = days;
+
+    </script>
+</body>
+</html>
